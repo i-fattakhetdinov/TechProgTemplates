@@ -5,3 +5,6 @@
 #include "AddTestCase.h"
 #include "Functions.h"
 
+TEST(AddTest, Equal) {
+    ASSERT_EQ(Add(1, 2), 3);
+}
