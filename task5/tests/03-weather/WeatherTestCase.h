@@ -8,11 +8,10 @@
 class WeatherTestCase : public ::testing::Test {
 protected:
     void SetUp() {
-        weather = new WeatherMock;
+        
     }
 
     void TearDown() {
-        delete weather;
+        
     }
-    Weather *weather;
 };

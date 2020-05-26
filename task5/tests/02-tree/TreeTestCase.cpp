@@ -6,7 +6,7 @@
 
 TEST_F(TreeTestCase, InvalidArgument) {
     ASSERT_THROW(GetTree("NonExistingPath", true), std::invalid_argument);
-    ASSERT_THROW(GetTree("test/1.txt", true), std::invalid_argument);
+    ASSERT_THROW(GetTree(workingDir + "test/1.txt", true), std::invalid_argument);
 }
 
 TEST_F(TreeTestCase, GetTreeWithoutFiles) {
@@ -25,7 +25,7 @@ TEST_F(TreeTestCase, GetTreeWithoutFiles) {
     rootFolder.children.push_back(folder1);
     rootFolder.children.push_back(folder2);
 
-    ASSERT_EQ(GetTree("test", true), rootFolder);
+    ASSERT_EQ(GetTree(workingDir + "test", true), rootFolder);
 }
 
 TEST_F(TreeTestCase, GetTreeWithFiles) {
@@ -49,7 +49,7 @@ TEST_F(TreeTestCase, GetTreeWithFiles) {
     rootFolder.children.push_back(folder2);
     rootFolder.children.push_back(file);
 
-    ASSERT_EQ(GetTree("test", false), rootFolder);
+    ASSERT_EQ(GetTree(workingDir + "test", false), rootFolder);
 }
 
 TEST_F(TreeTestCase, OperatorNodeEqual) {
